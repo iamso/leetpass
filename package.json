@@ -1,6 +1,6 @@
 {
   "name": "leetpass",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A leetspeak-style password generator",
   "main": "index.js",
   "bin": {

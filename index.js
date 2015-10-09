@@ -28,21 +28,21 @@ var leetpass = {
     var replaced = '';
     var range = _this.range;
     var split = string ? string.split('') : [];
+    var notInRange = split.length;
 
     split.forEach(function(v,k){
-      var vtUC = v.toUpperCase();
-      var char = v;
+      var char = ''+v;
+      var vtUC = char.toUpperCase();
 
       if (range[vtUC]) {
         char = range[vtUC][_this.rand(0, range[vtUC].length - 1)];
-      }
-      else {
-        char = v;
+        notInRange--;
       }
       char = k === Math.floor(Math.random()*split.length) ? char.toUpperCase() : char.toLowerCase();
       replaced += char;
     });
-    if (string && string === replaced) {
+
+    if (string && string === replaced && notInRange !== split.length) {
       _this.create(string);
     }
     else {
